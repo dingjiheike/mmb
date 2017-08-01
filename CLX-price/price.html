@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>白菜价--淘宝内部优惠券</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="">
+    <!--导入swiper-->
+    <link rel="stylesheet" href="../lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="../css/price.css">
+    <!--导入字体图标-->
+    <link rel="stylesheet" type="" href="../fonts/iconfont.css">
+
+
+    <!--导入就jQuery-->
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="../lib/zepto/zepto.js"></script>
+    <script src="../lib/zepto/touch.js"></script>
+    <script src="../lib/zepto/fx.js"></script>
+    <script src="../lib/zepto/event.js"></script>
+    <!--导入模板引擎-->
+    <script src="../lib/template/template-web.js"></script>
+
+
+
+
+    <!-- 使用js 来修改 rem的的大小 -->
+    <script>
+        // 这里除以的份数 取决于 我们在设计图中转换时 除以的分数 这里以10来计算会方便一些
+        document.querySelector('html').style.fontSize = window.screen.width / 10 + 'px';
+    </script>
+
+</head>
+
+<body>
+
+    <div class="price-container">
+        <div class="price-header">
+            <div class="back">
+                <a href="../index.html" class="iconfont icon-fanhui">
+                </a>
+            </div>
+            <h1>白菜价-淘宝内部券</h1>
+            <div class="home"> <a href="javascript:void(0);"></a> </div>
+        </div>
+        <!--导航开始-->
+        <div class="price-tabs">
+            <!-- Swiper -->
+            <div class="price-container swiper-container">
+                <div class="swiper-wrapper price-animate">
+                    <!--导航的模板引擎-->
+                    <script type="text/html" id="navTemplate">
+
+                        {{each result}}
+                        <li class="text" index='{{$value.titleId}}'><a href="javascript:;">{{$value.title}}</a></li>
+                        {{/each}}
+                    </script>
+
+                    <ul class="swiper-slide ">
+                        <!--<li class=""><a href="javascript:;">全部</a></li>
+                        <li class=""><a href="javascript:;">热销</a></li>
+                        <li class=""><a href="javascript:;">9块9包邮</a></li>
+                        <li class=""><a href="javascript:;">19块邮</a></li>
+                        <li class=""><a href="javascript:;">数码家电</a></li>
+                        <li class=""><a href="javascript:;">居家</a></li>
+                        <li class=""><a href="javascript:;">美食</a></li>
+                        <li class=""><a href="javascript:;">男装</a></li>
+                        <li class=""><a href="javascript:;">女装</a></li>
+                        <li class=""><a href="javascript:;">鞋包配饰</a></li>
+                        <li  class=""><a href="javascript:;">文体</a></li>
+                        <li  class=""><a href="javascript:;">母婴</a></li>
+                        <li  class=""><a href="javascript:;">美妆</a></li>-->
+                    </ul>
+                </div>
+                <!--<div class="price-pagination swiper-pagination"></div>-->
+            </div>
+            <div class="searchbtn">
+                <i class="iconfont icon-search"></i>
+            </div>
+
+            <div class="searchbox">
+                <div class="formsch clearfix">
+                    <form method="get" action="">
+                        <div class="txt">
+                            <input type="search" placeholder="搜索商品即可查内部券">
+                        </div>
+                        <div class="smt">
+                            <input type="submit" value="搜索">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <!--导航结束-->
+
+        <!--广告区域开始-->
+        <div class="price-ad">
+            <img src="../images/quan_banner_wap.png" alt="">
+        </div>
+        <!--广告区域结束-->
+
+        <!--产品列表开始-->
+
+        <script type="text/html" id="itemTemplate">
+
+            {{each result}}
+            <li class="item">
+                <a href="https://uland.taobao.com/coupon/edetail?activityId=f87b2839620a48baae9876e26b91692b&itemId=548189820145&pid=mm_56297410_8818824_67372454&dx=1">
+                    <div class="pic">
+                        <!--<img src="../images/haitao.png" alt="">-->
+                        {{#$value.productImg}}
+                    </div>
+                    <div class="item-right">
+                        <div class="item-right-t">
+                            <!--<span>[包邮]</span> 速干运动服速干运动服速干运动服速干运动服速干运动服【2件套】-->
+                            {{#$value.productName}}
+                        </div>
+                        <div class="item-right-c">
+                            <!--<i>券后</i><em>¥</em>32.9
+                                    <del>¥138.00</del>-->
+                            {{#$value.productPrice}}
+                        </div>
+                        <div class="item-right-b">
+                            <div class="item-right-b-top clearfix">
+                                <div class="youhuiQuan">
+                                    <!--{{#$value.productCoupon}}-->
+                                    10元优惠券
+                                </div>
+                                <div class="goTobuy">
+                                    领券下单
+                                </div>
+                            </div>
+                            <div class="item-right-b-bot">
+                                <b>已领取 2049 张</b>
+                                <!--<b> {{#$value.productCouponRemain}}</b>;-->
+
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </li>
+            {{/each}}
+        </script>
+
+        <script>
+        </script>
+
+        <div class="price-list">
+            <div class="price-list-tabs">
+                <ul>
+                    <!--产品项开始-->
+                    <!--<li class="item">
+                        <a href="javascript:;">
+                            <div class="pic">
+                                <img src="../images/haitao.png" alt="">
+                            </div>
+                            <div class="item-right">
+                                <div class="item-right-t">
+                                    <span>[包邮]</span> 速干运动服速干运动服速干运动服速干运动服速干运动服【2件套】
+                                </div>
+                                <div class="item-right-c">
+                                    <i>券后</i><em>¥</em>32.9
+                                    <del>¥138.00</del>
+                                </div>
+                                <div class="item-right-b">
+                                    <div class="item-right-b-top clearfix">
+                                        <div class="youhuiQuan">
+                                            30元优惠券
+                                        </div>
+                                        <div class="goTobuy">
+                                            领券下单
+                                        </div>
+                                    </div>
+                                    <div class="item-right-b-bot">
+                                        <b>已领取 2049 张</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </li>
+                    <li class="item">
+                        <a href="javascript:;">
+                            <div class="pic">
+                                <img src="../images/haitao.png" alt="">
+                            </div>
+                            <div class="item-right">
+                                <div class="item-right-t">
+                                    <span>[包邮]</span> 速干运动服速干运动服速干运动服速干运动服速干运动服【2件套】
+                                </div>
+                                <div class="item-right-c">
+                                    <i>券后</i><em>¥</em>32.9
+                                    <del>¥138.00</del>
+                                </div>
+                                <div class="item-right-b">
+                                    <div class="item-right-b-top clearfix">
+                                        <div class="youhuiQuan">
+                                            30元优惠券
+                                        </div>
+                                        <div class="goTobuy">
+                                            领券下单
+                                        </div>
+                                    </div>
+                                    <div class="item-right-b-bot">
+                                        <b>已领取 2049 张</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </li>
+
+                    <li class="item">
+                        <a href="javascript:;">
+                            <div class="pic">
+                                <img src="../images/haitao.png" alt="">
+                            </div>
+                            <div class="item-right">
+                                <div class="item-right-t">
+                                    <span>[包邮]</span> 速干运动服速干运动服速干运动服速干运动服速干运动服【2件套】
+                                </div>
+                                <div class="item-right-c">
+                                    <i>券后</i><em>¥</em>32.9
+                                    <del>¥138.00</del>
+                                </div>
+                                <div class="item-right-b">
+                                    <div class="item-right-b-top clearfix">
+                                        <div class="youhuiQuan">
+                                            30元优惠券
+                                        </div>
+                                        <div class="goTobuy">
+                                            领券下单
+                                        </div>
+                                    </div>
+                                    <div class="item-right-b-bot">
+                                        <b>已领取 2049 张</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </li>
+                    <li class="item">
+                        <a href="javascript:;">
+                            <div class="pic">
+                                <img src="../images/haitao.png" alt="">
+                            </div>
+                            <div class="item-right">
+                                <div class="item-right-t">
+                                    <span>[包邮]</span> 速干运动服速干运动服速干运动服速干运动服速干运动服【2件套】
+                                </div>
+                                <div class="item-right-c">
+                                    <i>券后</i><em>¥</em>32.9
+                                    <del>¥138.00</del>
+                                </div>
+                                <div class="item-right-b">
+                                    <div class="item-right-b-top clearfix">
+                                        <div class="youhuiQuan">
+                                            30元优惠券
+                                        </div>
+                                        <div class="goTobuy">
+                                            领券下单
+                                        </div>
+                                    </div>
+                                    <div class="item-right-b-bot">
+                                        <b>已领取 2049 张</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </li>-->
+                    <!--产品项结束-->
+                </ul>
+
+
+
+            </div>
+
+        </div>
+        <!--产品列表结束-->
+
+
+        <!--加载区域图标开始-->
+        <div class="page-loading">
+            <img src="../images/loading.gif" alt="">
+        </div>
+        <!--加载区域图标结束-->
+
+        <!--底部的导航栏开始-->
+        <div class="footer-nav">
+            <a href="../index.html">首页</a> &nbsp;&gt;&nbsp;
+            <a href="javascript:;">白菜价</a>
+        </div>
+
+
+        <!--底部的导航栏结束-->
+
+        <!--app广告开始-->
+        <div class="appbanner  appbannerc" id="Div1">
+            <div class="applogo">
+                <img src="../images/footer-logo.png">
+            </div>
+            <div class="tit">
+                慢慢买APP
+                <div class="subtit" style="">
+                    <p>
+                        给喜欢网购的同学推荐下[慢慢买]这个APP，第一时间更新国内外的优惠信息！
+                    </p>
+                </div>
+            </div>
+            <div class="openNow">
+                <a href="javascript:;" onclick="" class="a-install">
+                立即打开
+            </a>
+            </div>
+        </div>
+        <!--app广告结束-->
+
+        <!--底部-->
+        <footer id="foot">
+            <div class="foot_top">
+                <a href="javascript:void(0)">登录</a>
+                <a href="javascript:void(0)">注册</a>
+                <a href="#" style="width: 40%; border: 0;">
+                <img src="../images/top.jpg" width="15" height="15">返回顶部</a>
+            </div>
+            <div class="footer">
+                <p>
+                    <a href="javascript:void(0)" style="color: Red;">手机APP下载</a> <a href="index.html">
+                    慢慢买手机版</a> -- 掌上比价平台
+                </p>
+                <p>
+                    m.manmanbuy.com
+                    <img src="" width="0" height="0">
+                </p>
+            </div>
+        </footer>
+
+        <!--返回顶部箭头-->
+        <a class="gotop iconfont icon-up" id="gotop" href="javascript:;"></a>
+
+    </div>
+
+
+
+
+</body>
+
+</html>
+<!--导入swiper js 文件-->
+<script src="../lib/swiper/js/swiper.min.js"></script>
+
+<!--导入自己的 js-->
+<script src="../js/price.js"></script>
+
+<script>
+    
+</script>

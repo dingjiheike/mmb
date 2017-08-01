@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=0, initial-scale=1">
+    <title>凑单品</title>
+    <link rel="stylesheet" href="css/LH-base.css">
+    <link rel="stylesheet" href="css/Collect goods.css">
+    <link rel="stylesheet" href="css/LH-iconfont.css">
+
+    <!--商品信息模板-->
+    <script type="text/template" id="shop_option">
+        <% for(var i=0;i< result.length;i++){ %>
+        <li name="<%= result[i].shopId %>" mark="shop">
+            <a href="javascript:setImgData('product_option',<%= result[i].shopId%>);">
+                <%= result[i].shopName %>
+                <span class="<%= i==0?'font-icon font-icon-zhengque':'' %>"></span>
+            </a>
+        </li>
+        <% } %>
+    </script>
+
+    <!--地区模板-->
+    <script type="text/template" id="area_option">
+        <% for(var i=0;i< result.length;i++){ %>
+        <li name="<%= result[i].areaId %>" mark="area">
+            <a href="javascript:setImgData('product_option',0,<%= result[i].areaId %>);">
+                <%= result[i].areaName %>
+                <span class="<%= i==0?'font-icon font-icon-zhengque':'' %>"></span>
+            </a>
+        </li>
+        <% } %>
+    </script>
+
+    <!--产品信息-->
+    <script type="text/template" id="product_option">
+        <% for(var i=0;i< result.length;i++){ %>
+        <li>
+            <a href="#">
+                <% result[i].productImg=result[i].productImg=="http://img12.360buyimg.com/n8/jfs/t2593/357/1469295048/230488/3cb361d4/57400d1bN011a9a73.jpg"?"http://img11.360buyimg.com/n7/jfs/t2725/244/841611976/283905/ec790537/5728291dN770aa381.jpg":result[i].productImg %>
+                <img src="<%= result[i].productImg %>"
+                         alt="">
+                <p class="des"><%= result[i].productName %></p>
+                <p class="other">
+                     <span class="price"><%= result[i].productPrice %></span>
+                    <button>去凑单</button>
+                </p>
+            </a>
+        </li>
+        <% } %>
+    </script>
+
+</head>
+<body>
+    <div class="coudan_nav">
+        <!--凑单头部-->
+        <div class="coudan_header">
+            <a href="index.html" class="font-icon font-icon-xiangzuojiantou"></a>
+            <h1>凑单品</h1>
+            <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.manmanbuy.bijia" class="appxiazai"></a>
+        </div>
+        <!--过滤导航部分-->
+        <div class="coudan_filter">
+            <ul>
+                <a class="shop" data-target="#shop" href="#">
+                    <i>京东</i>
+                    <span class="caret"></span>
+                </a>
+                <a class="area" data-target="#area" href="#">
+                    <i>华北</i>
+                    <span class="caret"></span>
+                </a>
+                <a class="price" data-target="#price" href="#">
+                    <i>1-20元</i>
+                    <span class="caret"></span>
+                </a>
+                <div class="option">
+                    <ul class="shop_option clearfix" role="menu" id="shop"></ul>
+                    <ul class="area_option" role="menu" id="area"></ul>
+                    <ul class="price_option" role="menu" id="price">
+                        <li>
+                            <a href="#">全部搜索
+                                <span></span>
+                            </a>
+                              <a href="#">1-5元
+                                <span class="font-icon"></span>
+                            </a>
+                              <a href="#">6-10元
+                                <span class="font-icon"></span>
+                            </a>
+                              <a href="#">11-15元
+                                <span class="font-icon"></span>
+                            </a>
+                              <a href="#">16-20元
+                                <span class="font-icon"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <span class="search font-icon font-icon-sousuo1" href="#"></span>
+            </ul>
+        </div>
+    </div>
+
+    <!--凑单列表-->
+    <div class="coudan_product clearfix">
+        <ul class="section"></ul>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/template-native.js"></script>
+    <script src="js/Collect goods.js"></script>
+</body>
+</html>

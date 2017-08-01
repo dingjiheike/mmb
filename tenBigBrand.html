@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!--引入css-->
+  <link rel="stylesheet" href="./css/index.css">
+  <!--引入字体图标-->
+  <link rel="stylesheet" href="./fonts/iconfont.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  <script>
+    // 这里除以的份数 取决于 我们在设计图中转换时 除以的分数 这里以10来计算会方便一些
+    document.querySelector('html').style.fontSize = window.screen.width / 10 + 'px';
+  </script>
+  <!--引入jquery-->
+  <script src="./js/jquery-1.12.4.js"></script>
+  <!--引入js-->
+  <script src="./js/index.js"></script>
+</head>
+
+<body>
+
+
+  <!--头部区域模板-->
+  <header id="header" class="header">
+    <div class="logo">
+      <a href="index.html" title="慢慢买">
+                <img src="images/header_logo.png" alt="">
+            </a>
+    </div>
+    <div class="appDown">
+      <a href="javascript:void(0)" title="手机app下载">
+
+                <img src="images/header_app.png" alt="手机app下载"></a>
+    </div>
+  </header>
+  <!--搜索框-->
+  <section id="form-search">
+    <form action="#" class="search">
+      <input type="search" name="" value="" placeholder="请输入你想比价的商品">
+      <input type="button" value="搜索">
+    </form>
+  </section>
+
+
+  <!--十大品牌-->
+  <div class="tenBigBrand">
+    <h2><a href="./index.html">首页></a><a href="./brand.html">品牌大全></a><span id="tenBigBrand">平板电视那个牌子好</span></h2>
+    <!--十大品牌内容主体-->
+    <div class="tenBigBrand_container">
+      <h2 class="tenBigBrand_container_title">平板电视哪个牌子好</h2>
+      <!--<a href="javascript:void(0)" class="container_TV">
+        <span class="num">1</span>
+        <div class="TVName">
+          <h2>海信平板电视</h2>
+          <span>30天全网销量:53962件</span>
+        </div>
+        <i class="iconfont icon-fanhui"></i>
+      </a>-->
+    </div>
+    <!--销量排行-->
+    <div class="tenBigBrand_list">
+      <div class="salesRanking">
+        <h2>平板电视产品销量排行</h2>
+        <!--<a class="TVinfo" href="javascript:void(0)">
+      <img src="./images/haitao.png" alt="">
+      <div class="TVinfo_main">
+        <span class="TVinfo_message">TCL D43A810 42英寸 高清720P 智能网络LED液晶电视</span>
+        <div class="TVprice">
+          <span class="TVprice_left">￥1999.00</span>
+          <span class="TVprice_right">☆☆☆☆☆</span>
+        </div>
+        <div class="TV_comment">报价(7) 全网评论(52475)</div>
+      </div>
+    </a>-->
+      </div>
+    </div>
+    <!--最新评论-->
+    <div class="tenBigBrand_comment">
+      <h3>平板电视最新评论</h3>
+      <!--<div class="tenBigBrand_comment_TV">
+        <img src="./images/gengduo.png" alt="">
+        <div class="comment_TVinfo">创维(Skyworth) 42×5 42英寸 全高清智能网络LED液晶平板电视</div>
+      </div>
+      <div class="tenBigBrand_comment_main">
+        <div class="comment_main_top">
+          <div class="commenter"> j***x：<span>★★★★★</span> </div>
+          <div class="commentTime">2017/7/4</div>
+        </div>
+        <div class="comment_main_bottom">第二台了,家里买了又推荐亲戚买的,很好,服务也好,送货也快,要是安装能在下单时就预约就更好了,到货当天就可以看了,否则还要等到第二天.</div>
+      </div>-->
+    </div>
+
+
+
+  </div>
+
+
+
+
+  <!--底部-->
+  <footer id="foot">
+    <div class="foot_top">
+      <a href="javascript:void(0)">登录</a>
+      <a href="javascript:void(0)">注册</a>
+      <a href="#" style="width: 40%; border: 0;">
+                <img src="images/top.jpg" width="15" height="15">返回顶部</a>
+    </div>
+    <div class="footer">
+      <p>
+        <a href="javascript:void(0)" style="color: Red;">手机APP下载</a> <a href="index.html">
+                    慢慢买手机版</a> -- 掌上比价平台
+      </p>
+      <p>
+        m.manmanbuy.com
+        <img src="" width="0" height="0">
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
+
+<!--引入模板引擎-->
+<script src="./lib/template/template-web.js"></script>
+<!--定义十大品牌模板引擎-->
+<script type="text/html" id="brandName">
+  {{each result}}
+  <a href="javascript:void(0)" class="container_TV">
+        <span class="num">{{$index+1}}</span>
+        <div class="TVName">
+          <h2>{{$value.brandName}}</h2>
+          <span>{{$value.brandInfo}}</span>
+        </div>
+        <i class="iconfont icon-fanhui"></i>
+      </a> {{/each}}
+</script>
+
+<!--定义销量排行模板-->
+<script type="text/html" id="salesRanking">
+  {{each result}}
+  <a class="TVinfo" href="javascript:void(0)">
+    {{#$value.productImg}}
+    <div class="TVinfo_main">
+      <span class="TVinfo_message">{{$value.productName}}</span>
+      <div class="TVprice">
+        <span class="TVprice_left">{{$value.productPrice}}</span>
+        <span class="TVprice_right">★★★★★</span>
+      </div>
+      <div class="TV_comment">{{$value.productQuote}} 全网{{$value.productCom}}</div>
+    </div>
+  </a> {{/each}}
+</script>
+
+<!--定义最新评论引擎-->
+<script type="text/html" id="newComment">
+  {{each result}}
+  <div class="tenBigBrand_comment_TV">
+    <img src="./images/cw.jpg" alt="">
+    <div class="comment_TVinfo">创维(Skyworth) 42×5 42英寸 全高清智能网络LED液晶平板电视</div>
+  </div>
+  <div class="tenBigBrand_comment_main">
+    <div class="comment_main_top">
+      <div class="commenter"> {{$value.comName}}：<span>★★★★★</span> </div>
+      <div class="commentTime">{{$value.comTime}}</div>
+    </div>
+    <div class="comment_main_bottom">{{$value.comContent}}</div>
+  </div>
+  {{/each}}
+</script>
+
+
+<script>
+  function getUrlParamStr(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = decodeURI(window.location.href).substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+  }
+
+  function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+  }
+
+  // var brandName = getUrlParam('brandName');
+  // console.log(brandName);
+
+  var index = getUrlParam('index');
+  console.log(index);
+  //十大品牌哪个牌子好的ajax
+  $.ajax({
+    url: 'http://139.199.192.48:9090/api/getbrand',
+    dataType: 'jsonp',
+    data: {
+      brandtitleid: index
+    },
+    success: function (data) {
+      console.log(data);
+      var tenBigBrandData = template('brandName', data);
+      $('.tenBigBrand_container').append(tenBigBrandData);
+      var brandName = getUrlParamStr('brandName');
+      $("#tenBigBrand").html(brandName);
+      $(".tenBigBrand_container_title").html(brandName);
+    }
+  })
+  //销量排行ajax
+  $.ajax({
+    url: 'http://139.199.192.48:9090/api/getbrandproductlist',
+    dataType: 'jsonp',
+    data: {
+      brandtitleid: index
+    },
+    success: function (data) {
+      console.log(data);
+      var brandNameData = template('salesRanking', data);
+      $('.salesRanking').append(brandNameData);
+      var brandName = getUrlParamStr('brandName');
+      $(".salesRanking h2").html(brandName.replace(/十大品牌/, '销量排行'));
+    }
+  })
+  //最新评论ajax
+  $.ajax({
+    url: 'http://139.199.192.48:9090/api/getproductcom',
+    dataType: 'jsonp',
+    data: {
+      productid: index
+    },
+    success: function (data) {
+      console.log(data);
+      var newCommentData = template('newComment', data);
+      $('.tenBigBrand_comment').append(newCommentData);
+      var brandName = getUrlParamStr('brandName');
+      $(".tenBigBrand_comment h3").html(brandName.replace(/十大品牌/, '最新评论'));
+    }
+  })
+</script>

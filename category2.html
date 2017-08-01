@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>比价搜索/查看历史/口碑</title>
+    <script type="text/javascript">
+        var fontSize = window.screen.width / 20;
+        document.querySelector('html').style.fontSize = fontSize + "px";
+        window.onresize = function () {
+            var fontSize = window.screen.width / 20;
+            document.querySelector('html').style.fontSize = fontSize + "px";
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/index_mayunfei.css">
+    <link rel="stylesheet" type="text/css" href="css/koubei.css">
+    <style>
+        #foot {
+            position: static;
+        }
+    </style>
+</head>
+
+<body>
+    <!--头部区域模板-->
+    <header id="header" class="header">
+        <div class="logo">
+            <a href="./index.html" title="慢慢买">
+                <img src="images/header_logo.png" alt="">
+            </a>
+        </div>
+        <div class="appDown">
+            <a href="javascript:void(0)" title="手机app下载">
+
+                <img src="images/header_app.png" alt="手机app下载"></a>
+        </div>
+    </header>
+    <!--搜索框-->
+    <section id="form-search">
+        <form action="#" class="search">
+            <input type="search" name="" value="" placeholder="请输入你想比价的商品">
+            <input type="button" value="搜索">
+        </form>
+    </section>
+    <div class="koubei">
+        <ul>
+            <!--<li>
+                <div class="title">
+                    <h3>大家电</h3>
+                    <span>↓</span>
+                </div>
+                <div class="neirong">
+                    <ul class="content">
+                        <li><a href="#">电视</a></li>
+                        <li><a href="#">电视</a></li>
+                        <li><a href="#">电视</a></li>
+                        <li><a href="#">电视</a></li>
+                        <li><a href="#">电视</a></li>
+                        <li><a href="#">电视</a></li>
+                        <li><a href="#">电视</a></li>
+                        <li><a href="#">电视</a></li>
+                        <li><a href="#">电视</a></li>
+                        <li><a href="#">电视</a></li>
+                    </ul>
+                </div>
+            </li>-->
+        </ul>
+    </div>
+    <footer id="foot">
+        <div class="foot_top">
+            <a href="javascript:void(0)">登录</a>
+            <a href="javascript:void(0)">注册</a>
+            <a href="#" style="width: 40%; border: 0;">
+                <img src="images/top.jpg" width="15" height="15">返回顶部</a>
+        </div>
+        <div class="footer">
+            <p>
+                <a href="javascript:void(0)" style="color: Red;">手机APP下载</a> <a href="index.html">
+                    慢慢买手机版</a> -- 掌上比价平台
+            </p>
+            <p>
+                m.manmanbuy.com
+                <img src="" width="0" height="0">
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script type="text/javascript" src="lib/zepto/zepto.js"></script>
+<script type="text/javascript" src="lib/zepto/event.js"></script>
+<script type="text/javascript" src="lib/zepto/fx.js"></script>
+<script type="text/javascript" src="lib/zepto/touch.js"></script>
+<script type="text/javascript" src="lib/swiper/js/swiper.min.js"></script>
+<script type="text/javascript" src="lib/zepto/ajax.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="js/template.js"></script>
+<!--模板-->
+<script type="text/template" id="template">
+    {{each result}}
+    <li data-id='{{$value._id}}'>
+        <div data-titleId='{{$value.titleId}}' class="title">
+            <h3>{{$value.title}}</h3>
+            <span>▼</span>
+        </div>
+        <div class="neirong" id='neirong'>
+            <ul class="content">
+
+            </ul>
+        </div>
+    </li>
+    {{/each}}
+</script>
+<!--这个模板中的a链接的href需要给跳转地址发送数据-->
+<script type="text/template" id="template2">
+    {{each result}}
+    <li><a data-id='{{$value.categoryId}}' href="./shopList.html?index={{$value.categoryId}}&name={{$value.category}}">{{$value.category}}</a></li>
+    {{/each}}
+</script>
+<script>
+    $.ajax({
+        url: "http://139.199.192.48:9090/api/getcategorytitle",
+        success: function (data) {
+            var neirong = template('template', data);
+            $('.koubei ul').append(neirong);
+            //  var panduan = true;
+            $('.koubei ul li').click(function () {
+                var $this = $(this);
+                console.log($this);
+                // 用toggleClass("hide")更改类名的方式让内容显示隐藏
+                $(this).children('.neirong').toggleClass("hide");
+                var id = $(this).children('div').attr('data-titleId');
+                $.ajax({
+                    url: "http://139.199.192.48:9090/api/getcategory?titleid=" + id,
+                    success: function (data) {
+                        console.log(data);
+                        var neirong1 = template('template2', data);
+                        $this.children('.neirong').children('.content').html(neirong1);
+                        console.log($this.children('.neirong').children('.content'));
+                        panduan = false;
+                    }
+                })
+            })
+        }
+    })
+</script>

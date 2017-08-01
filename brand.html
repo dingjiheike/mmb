@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!--引入css-->
+  <link rel="stylesheet" href="./css/index.css">
+  <!--引入字体图标-->
+  <link rel="stylesheet" href="./fonts/iconfont.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  <script>
+    // 这里除以的份数 取决于 我们在设计图中转换时 除以的分数 这里以10来计算会方便一些
+    document.querySelector('html').style.fontSize = window.screen.width / 10 + 'px';
+  </script>
+  <!--引入jquery-->
+  <script src="./js/jquery-1.12.4.js"></script>
+  <!--引入js-->
+  <script src="./js/index.js"></script>
+</head>
+
+<body>
+  <!--头部区域模板-->
+  <header id="header" class="header">
+    <div class="logo">
+      <a href="index.html" title="慢慢买">
+                <img src="images/header_logo.png" alt="">
+            </a>
+    </div>
+    <div class="appDown">
+      <a href="javascript:void(0)" title="手机app下载">
+
+                <img src="images/header_app.png" alt="手机app下载"></a>
+    </div>
+  </header>
+  <!--搜索框-->
+  <section id="form-search">
+    <form action="#" class="search">
+      <input type="search" name="" value="" placeholder="请输入你想比价的商品">
+      <input type="button" value="搜索">
+    </form>
+  </section>
+
+
+  <!--品牌大全-->
+  <div class="hotBrand">
+    <h2><a href="./index.html">首页></a><a href="./pinpai.html">品牌大全</a></h2>
+    <p>热门品牌排行</p>
+    <div class="brands">
+      <a href="javascript:void(0)" class="brand">
+        <div class="brand_left">平板电视十大品牌</div>
+        <div class="brand_right iconfont icon-fanhui"></div>
+      </a>
+    </div>
+  </div>
+
+
+
+  <!--底部-->
+  <footer id="foot">
+    <div class="foot_top">
+      <a href="javascript:void(0)">登录</a>
+      <a href="javascript:void(0)">注册</a>
+      <a href="#" style="width: 40%; border: 0;">
+                <img src="images/top.jpg" width="15" height="15">返回顶部</a>
+    </div>
+    <div class="footer">
+      <p>
+        <a href="javascript:void(0)" style="color: Red;">手机APP下载</a> <a href="index.html">
+                    慢慢买手机版</a> -- 掌上比价平台
+      </p>
+      <p>
+        m.manmanbuy.com
+        <img src="" width="0" height="0">
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
+
+<!--引入模板引擎-->
+<script src="./lib/template/template-web.js"></script>
+<script type="text/html" id="brandTemplate">
+{{each result}}
+  <a href="./tenBigBrand.html?index={{$value.brandTitleId}}&brandName={{$value.brandTitle}}" class="brand">
+    <div class="brand_left">{{$value.brandTitle}}</div>
+    <div class="brand_right iconfont icon-fanhui"></div>
+  </a>
+{{/each}}
+</script>
+
+<script>
+  $(function(){
+    getBrandData();
+  })
+  function getBrandData(){
+    $.ajax({
+      url:'http://139.199.192.48:9090/api/getbrandtitle',
+      success:function(data){
+        var brandData = template('brandTemplate',data);
+        $('.brands').html(brandData);
+        console.log(data);
+      }
+    })
+  }
+</script>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>首页》全部分类》电视》商品详情</title>
+    <script type="text/javascript">
+        var fontSize = window.screen.width / 20;
+        document.querySelector('html').style.fontSize = fontSize + "px";
+        window.onresize = function () {
+            var fontSize = window.screen.width / 20;
+            document.querySelector('html').style.fontSize = fontSize + "px";
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/index_mayunfei.css">
+    <link rel="stylesheet" href="css/productinfo.css">
+</head>
+
+<body>
+    <!--头部区域模板-->
+    <header id="header" class="header">
+        <div class="logo">
+            <a href="./index.html" title="慢慢买">
+                <img src="images/header_logo.png" alt="">
+            </a>
+        </div>
+        <div class="appDown">
+            <a href="javascript:void(0)" title="手机app下载">
+                <img src="images/header_app.png" alt="手机app下载"></a>
+        </div>
+    </header>
+    <!--搜索框-->
+    <section id="form-search">
+        <form action="#" class="search">
+            <input type="search" name="" value="" placeholder="请输入你想比价的商品">
+            <input type="button" value="搜索">
+        </form>
+    </section>
+    <!--*******导航开始******-->
+    <div class="nav">
+        <div class="nav_left fl">
+            <a href="./index.html">首页</a> >
+            <a href="category.html">全部分类</a> >
+            <!--<a href="#">电视</a>-->
+            <!--添加模板-->
+        </div>
+        <div class="nav_right fr"><button>筛选</button></div>
+    </div>
+    <!--*******导航结束******-->
+    <div class="main">
+        <div class="spxq">
+            <!--<div class="product clearfix">
+                <p>乐视TV(Letv)S50 Air全配版2D 50英寸 全高清LED液晶电视</p>
+                <img src="" alt="" href="#">
+                <button>收藏</button>
+            </div>
+            <div class="bijia">
+                <div>比价购买</div>
+                <div>产品参数</div>
+                <div>评价(2322)</div>
+            </div>
+            <div class="wangzhan">
+                <div class="wangzhan_top clearfix">
+                    <div class="wangzhan_top_left fl ">天猫旗舰店</div>
+                    <div class="wangzhan_top_right fr">
+                        <span class="fl">￥219.00</span><button class="fl">去购买</button>
+                    </div>
+                </div>
+                <div class="wangzhan_bottom">
+                    <p>*实际价格也各网站列出的实时售价为准，我们提供的价格可能有数小时至数日的延迟。</p>
+                </div>
+            </div>-->
+        </div>
+
+        <div class="pingjia">
+            <div class="pingjia_tit">网友评价</div>
+            <ul class="pingjia_cengtent">
+                <!--<li>
+                    <div class="clearfix"><span class="fl">j***y</span><span class="fr">2015/1/1</span></div>
+                    <div>购买自：京东商城</div>
+                    <p>东西做工应该还算不错，但是使用体验上感觉有点粗糙，就是一个气囊充气后对穴位进行挤压再加一个加热功能，应该说是比较简单的一个东西，但是价格相对偏高。2.使用过后有效果，挺舒服的，就是对太阳穴的挤压偏大，其它穴位的按摩效果一般</p>
+                </li>
+                <li>
+                    <div class="clearfix"><span class="fl">j***y</span><span class="fr">2015/1/1</span></div>
+                    <div>购买自：京东商城</div>
+                    <p>东西做工应该还算不错，但是使用体验上感觉有点粗糙，就是一个气囊充气后对穴位进行挤压再加一个加热功能，应该说是比较简单的一个东西，但是价格相对偏高。2.使用过后有效果，挺舒服的，就是对太阳穴的挤压偏大，其它穴位的按摩效果一般</p>
+                </li>
+                <li>
+                    <div class="clearfix"><span class="fl">j***y</span><span class="fr">2015/1/1</span></div>
+                    <div>购买自：京东商城</div>
+                    <p>东西做工应该还算不错，但是使用体验上感觉有点粗糙，就是一个气囊充气后对穴位进行挤压再加一个加热功能，应该说是比较简单的一个东西，但是价格相对偏高。2.使用过后有效果，挺舒服的，就是对太阳穴的挤压偏大，其它穴位的按摩效果一般</p>
+                </li>
+                <li>
+                    <div class="clearfix"><span class="fl">j***y</span><span class="fr">2015/1/1</span></div>
+                    <div>购买自：京东商城</div>
+                    <p>东西做工应该还算不错，但是使用体验上感觉有点粗糙，就是一个气囊充气后对穴位进行挤压再加一个加热功能，应该说是比较简单的一个东西，但是价格相对偏高。2.使用过后有效果，挺舒服的，就是对太阳穴的挤压偏大，其它穴位的按摩效果一般</p>
+                </li>
+                <li>
+                    <div class="clearfix"><span class="fl">j***y</span><span class="fr">2015/1/1</span></div>
+                    <div>购买自：京东商城</div>
+                    <p>东西做工应该还算不错，但是使用体验上感觉有点粗糙，就是一个气囊充气后对穴位进行挤压再加一个加热功能，应该说是比较简单的一个东西，但是价格相对偏高。2.使用过后有效果，挺舒服的，就是对太阳穴的挤压偏大，其它穴位的按摩效果一般</p>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+    <!--*******查看更多开始******-->
+    <div class="page" id="page">
+        <button id="btn">查看更多评价</button>
+    </div>
+    <!--*******查看更多结束******-->
+    <footer id="foot">
+        <div class="foot_top">
+            <a href="javascript:void(0)">登录</a>
+            <a href="javascript:void(0)">注册</a>
+            <a href="#" style="width: 40%; border: 0;">
+                <img src="images/top.jpg" width="15" height="15">返回顶部</a>
+        </div>
+        <div class="footer">
+            <p>
+                <a href="javascript:void(0)" style="color: Red;">手机APP下载</a> <a href="index.html">
+                    慢慢买手机版</a> -- 掌上比价平台
+            </p>
+            <p>
+                m.manmanbuy.com
+                <img src="" width="0" height="0">
+            </p>
+        </div>
+    </footer>
+</body>
+<!--*******模板区域******-->
+<!--导航-->
+<script type="text/template" id="template">
+    {{each result}}
+    <a href="#">{{$value.category}}</a> {{/each}}
+</script>
+<!--商品内容-->
+<script type="text/template" id="template2">
+    {{each result}}
+    <div class="product clearfix">
+        <p>{{$value.productName}}</p>
+        {{#$value.productImg}}
+        <button>收藏</button>
+    </div>
+    <div class="bijia">
+        <div>比价购买</div>
+        <div>产品参数</div>
+        <div>评价(2322)</div>
+    </div>
+    <div class="wangzhan">
+        <div class="wangzhan_top clearfix">
+            {{#$value.bjShop}}
+        </div>
+        <div class="wangzhan_bottom">
+            <p>*实际价格也各网站列出的实时售价为准，我们提供的价格可能有数小时至数日的延迟。</p>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<!--评论模板、-->
+<script type="text/template" id="template3">
+{{each result}}
+    <li>
+        <div class="clearfix"><span class="fl">{{$value.comName}}</span><span class="fr">{{$value.comTime}}</span></div>
+        <div>{{$value.comFrom}}</div>
+        <p>{{$value.comContent}}</p>
+    </li>
+{{/each}}    
+</script>
+<!--*******模板区域******-->
+
+</html>
+<script type="text/javascript" src="lib/zepto/zepto.js"></script>
+<script type="text/javascript" src="lib/zepto/event.js"></script>
+<script type="text/javascript" src="lib/zepto/fx.js"></script>
+<script type="text/javascript" src="lib/zepto/touch.js"></script>
+<script type="text/javascript" src="lib/zepto/ajax.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/template.js"></script>
+
+<script>
+    $(function () {
+        // 这里需要现获取从url过来的数据作为ajax需要发送的数据
+        var url = window.location.href; // 获取地址栏的数据
+        var arr = url.split('~'); // 拆掉地址栏的数据
+        console.log(arr);
+        var categoryid = parseInt(arr[1]);
+        var productid = parseInt(arr[3]);
+        //获取导航
+        $.ajax({
+            url: "http://139.199.192.48:9090/api/getcategorybyid?categoryid=" + categoryid,
+            success: function (data) {
+                var content = template('template', data);
+                $('.nav_left ').append(content);
+                // 获取商品详情
+                $.ajax({
+                    url: 'http://139.199.192.48:9090/api/getproduct?productid=' + productid,
+                    success: function (data) {
+                        var neirong = template('template2', data);
+                        $('.spxq').append(neirong);
+                    }
+                })
+            }
+        })
+        // 获取评价数据
+        $.ajax({
+            url: 'http://139.199.192.48:9090/api/getproductcom?productid=' + productid,
+            success: function (data) {
+                console.log(data);
+                var neirong = template('template3', data);
+                $('.pingjia_cengtent').append(neirong);
+            }
+        })
+    })
+</script>
+
+
+<!--比价部分获取的标签-->
+<!--<table width="100%">
+    <tbody>
+        <tr>
+            <td rowspan="2" class="p_pic" valign="top">
+                <a href="redirect.aspx?webid=8&amp;bjid=134582063&amp;tourl=http://item.gome.com.cn/9114205753-1103970310.html&amp;y=bijia"
+                    target="_blank" onclick="trackLog('商品购买','比价页面');"> <img src="http://sf.manmanbuy.com/images/sitelogo/8.png"></a>
+            </td>
+            <td> <a href="redirect.aspx?webid=8&amp;bjid=134582063&amp;tourl=http://item.gome.com.cn/9114205753-1103970310.html&amp;y=bijia"
+                    target="_blank" onclick="trackLog('商品购买','比价页面');">国美在线</a> </td>
+            <td class="red"> ￥349.00 </td>
+            <td align="center" width="60"> <span style="display: inline-block;width: 56px;height: 24px;border-radius: 6px;text-align: center;line-height: 24px;background-color: #ff5500;color: #fff;font-size: 14px;">去购买</span>                </td>
+        </tr>
+        <tr class="tab2">
+            <td> </td>
+            <td class="r"> </td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>-->

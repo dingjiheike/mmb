@@ -1,0 +1,231 @@
+<!--这是首页的html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!--引入css-->
+  <link rel="stylesheet" href="./css/index.css">
+  <!--引入字体图标-->
+  <link rel="stylesheet" href="./fonts/iconfont.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+
+  <script>
+    // 这里除以的份数 取决于 我们在设计图中转换时 除以的分数 这里以10来计算会方便一些
+    document.querySelector('html').style.fontSize = window.screen.width / 10 + 'px';
+  </script>
+  <!--引入jquery-->
+  <script src="./js/jquery-1.12.4.js"></script>
+  <!--引入js-->
+  <script src="./js/index.js"></script>
+</head>
+
+<body>
+  <!--头部区域模板-->
+  <header id="header" class="header">
+    <div class="logo">
+      <a href="index.html" title="慢慢买">
+                <img src="images/header_logo.png" alt="">
+            </a>
+    </div>
+    <div class="appDown">
+      <a href="javascript:void(0)" title="手机app下载">
+
+                <img src="images/header_app.png" alt="手机app下载"></a>
+    </div>
+  </header>
+  <!--搜索框-->
+  <section id="form-search">
+    <form action="#" class="search">
+      <input type="search" name="" value="" placeholder="请输入你想比价的商品">
+      <input type="button" value="搜索">
+    </form>
+  </section>
+
+
+  <!--首页-->
+  <div class="index">
+    <!--首页导航-->
+    <ul class="index_nav">
+      <li>
+        <a href="./category.html">
+            <img src="./images/ic_search.png" alt="">
+            <p>比价搜索</p>
+          </a>
+      </li>
+      <li>
+        <a href="./savemoney.html">
+            <img src="./images/ic_cu.png" alt="">
+            <p>省钱控</p>
+          </a>
+      </li>
+      <li>
+        <a href="./discount.html">
+            <img src="./images/ic_coudanpin.png" alt="">
+            <p>国内折扣</p>
+          </a>
+      </li>
+      <li>
+        <a href="./CLX-price/price.html">
+            <img src="./images/ic_bcj.png" alt="">
+            <p>白菜价</p>
+          </a>
+      </li>
+      <li>
+        <a href="./haitaozhekou.html">
+            <img src="./images/haitao.png" alt="">
+            <p>海淘折扣</p>
+          </a>
+      </li>
+      <li>
+        <a href="./category2.html">
+            <img src="./images/ic_temai.png" alt="">
+            <p>比价风云榜</p>
+          </a>
+      </li>
+      <li>
+        <a href="">
+            <img src="./images/ic_trend.png" alt="">
+            <p>查历史价</p>
+          </a>
+      </li>
+      <li>
+        <a id="gengduo" href="jacascript:void(0)">
+            <img src="./images/gengduo.png" alt="">
+            <p>更多</p>
+          </a>
+      </li>
+      <li class="none switch">
+        <a href="./html/coupon.1.html">
+            <img src="./images/ic_temai.png" alt="">
+            <p>优惠券</p>
+          </a>
+      </li>
+      <li class="none switch">
+        <a href="./Collect goods.html">
+            <img src="./images/ic_coudanpin.png" alt="">
+            <p>凑单品</p>
+          </a>
+      </li>
+      <li class="none switch">
+        <a href="">
+            <img src="./images/ic_kb.png" alt="">
+            <p>口碑排行</p>
+          </a>
+      </li>
+      <li class="none switch">
+        <a href="./html/shopNavigation.html">
+            <img src="./images/ic_mall.png" alt="">
+            <p>商城导航</p>
+          </a>
+      </li>
+      <li class="none switch">
+        <a href="./brand.html">
+            <img src="./images/ic_pp.png" alt="">
+            <p>品牌大全</p>
+          </a>
+        </l>
+    </ul>
+    <!--超值折扣-->
+    <div class="index_rebate">
+      <!--超值折扣推荐标题-->
+      <h2>
+        <p>超值折扣推荐</p>
+        <img src="./images/more.png" alt="">
+      </h2>
+      <!--超值折扣推荐内容主体-->
+      <div class="rebate_items">
+        <!--<a class="rebate_item" href="javascript:void(0)">
+            <img src="./images/gengduo.png" alt="">
+            <div class="index_rebate_container">
+              <div class="title_top">48.9元包邮(券后),日常99元
+                <span>48.9元包邮(券后),日常99元</span>
+              </div>
+              <div class="title_bottom">
+                <span>天猫商城 | 07-04 08:43</span>
+                <span><i class="iconfont icon-yuedupinglun"></i>0</span>
+              </div>
+            </div>
+        </a>-->
+      </div>
+
+
+    </div>
+
+
+    <!--更多优惠信息-->
+    <div class="moreMessage"><a href="./savemoney.html">更多优惠信息>></a></div>
+    <!--品牌排行-->
+    <a href="./brand.html" class="brandList">
+      <span>品牌排行</span>
+      <img src="./images/more.png" alt="">
+    </a>
+
+  </div>
+
+
+    <!--底部-->
+  <footer id="foot">
+    <div class="foot_top">
+      <a href="javascript:void(0)">登录</a>
+      <a href="javascript:void(0)">注册</a>
+      <a href="#" style="width: 40%; border: 0;">
+                <img src="images/top.jpg" width="15" height="15">返回顶部</a>
+    </div>
+    <div class="footer">
+      <p>
+        <a href="javascript:void(0)" style="color: Red;">手机APP下载</a> <a href="index.html">
+                    慢慢买手机版</a> -- 掌上比价平台
+      </p>
+      <p>
+        m.manmanbuy.com
+        <img src="" width="0" height="0">
+      </p>
+    </div>
+  </footer>
+</body>
+
+
+
+</html>
+<!--引入template-->
+<script src="./lib/template/template-web.js"></script>
+<!--定义首页内容主体模板-->
+<script type="text/html" id="index_container">
+  <!--超值折扣推荐内容主体-->
+  {{each result}}
+  <a class="rebate_item" href="./savemoney2.html?index={{$value.productId}}">
+            {{#$value.productImgSm}}
+            <div class="index_rebate_container">
+              <div class="title_top">{{$value.productName}}
+                <span>{{$value.productPinkage}}</span>
+              </div>
+              <div class="title_bottom">
+                <span>{{$value.productFrom}} | {{$value.productTime}}</span>
+                <span><i class="iconfont icon-yuedupinglun"></i>{{$value.productComCount}}</span>
+              </div>
+            </div>
+        </a>
+   {{/each}}
+</script>
+<script>
+  $(function(){
+    getIndexData();
+  })
+
+  //封装了一个首页获取数据的函数
+  function getIndexData(){
+    $.ajax({
+      url:'http://139.199.192.48:9090/api/getmoneyctrl',
+      dataType:'jsonp',
+      success:function(data){
+        console.log(data);
+        var indexData = template('index_container',data);
+        $('.rebate_items').html(indexData);
+      }
+    })
+  }
+</script>

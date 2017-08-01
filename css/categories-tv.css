@@ -1,0 +1,101 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent; }
+
+a {
+  text-decoration: none; }
+
+ul, ol {
+  list-style: none; }
+
+input {
+  border: 0;
+  outline: none;
+  -webkit-appearance: none; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.clearfix::before, .clearfix::after {
+  content: '';
+  clear: both;
+  line-height: 0;
+  height: 0;
+  display: block;
+  visibility: hidden; }
+
+.clearfix {
+  zoom: 1; }
+
+/******* 导航部分开始 ******/
+.nav {
+  padding: 0 10px;
+  text-align: center;
+  line-height: 36px;
+  height: 36px;
+  background: #EBEBEB;
+  font-size: 14px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; }
+  .nav .nav_left a {
+    color: black; }
+  .nav .nav_right button {
+    height: 28px;
+    padding: 0 16px;
+    border-radius: 5px; }
+
+/******* 导航部分结束 ******/
+/******* 内容开始 ******/
+.content li {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  padding: 0.53125rem;
+  display: flex; }
+  .content li .con_left {
+    width: 4.375rem; }
+    .content li .con_left img {
+      width: 4.375rem;
+      height: 4.375rem; }
+  .content li .con_right {
+    flex: 1;
+    padding-left: 10px; }
+    .content li .con_right a {
+      color: black;
+      line-height: 22px; }
+    .content li .con_right p {
+      font-size: 22px;
+      color: red;
+      margin: 5px 0; }
+    .content li .con_right span {
+      font-size: 12px;
+      color: #ccc; }
+
+/******* 内容结束 ******/
+/******* 页码开始 ******/
+#page {
+  height: 36px;
+  width: 100%;
+  line-height: 36px;
+  padding: 10px 20px; }
+  #page button {
+    height: 32px;
+    padding: 0 0.9375rem; }
+  #page #select {
+    font-size: 20px;
+    height: 32px;
+    margin: 0 0 0 50px;
+    padding: 0 0.625rem; }
+
+/******* 页码结束 ******/
+#foot {
+  position: static;
+  margin-top: -10px; }
+
+/*# sourceMappingURL=categories-tv.css.map */

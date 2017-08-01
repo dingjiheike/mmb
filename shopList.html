@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+      <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+      <title>慢慢买</title>
+      <script type="text/javascript">
+            document.querySelector('html').style.fontSize = window.screen.width / 10 + "px";
+      </script>
+      <link rel="shortcut  icon" href="./favicon.ico">
+      <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="./css/shopList.css">
+      <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+      <!-- 遮罩层  -->
+      <div class="shop-black">
+            <!-- 加载中   -->
+            <i class="icon-spinner icon-spin icon-2x pull-left"></i>
+      </div>
+      <!-- 商品详情 -->
+      <div class="shop-content none">
+            <!--三级菜单  -->
+            <div class="shop-three">
+                  <p><a href="./index.html">首页</a><a href="./category2.html"> <span>&gt;</span> 比价搜索</a><a href="#"> <span> &gt; </span> </a></p>
+            </div>
+            <!--商品详情上  -->
+            <div class="shop-content-top">
+            </div>
+            <!-- 网友评价 -->
+            <div class="shop-content-comment">
+            </div>
+            <!--更多评价  -->
+            <div class="shop-content-most">
+                  <div class="most-top">
+                        <div class="most-comment">
+                              <p>查看更多评论</p>
+                        </div>
+                  </div>
+                  <div class="mmbApp">
+                        <img src="./images/mmbApp.png" alt="">
+                  </div>
+            </div>
+      </div>
+      <!--商品列表内容部分  -->
+      <div class="shopping">
+            <!-- 商品标题 -->
+            <div id="shop-top" class="shop-top">
+                  <ul>
+                        <li><a class="mmbRed" href="javasicript:void(0)">综合</a></li>
+                        <li><a href="javasicript:void(0)">销量</a></li>
+                        <li><a href="javasicript:void(0)">价格</a></li>
+                        <li><a href="javasicript:void(0)"><i></i>筛选</a></li>
+                  </ul>
+            </div>
+            <!-- 商品列表 -->
+            <div class="shop-all">
+            </div>
+            <!--商品底部  -->
+            <div class="shop-bottom">
+                  <div class="page">
+                        <input class="page-left" type="button" value="上一页">
+                        <div class="page-center"><span>1</span>/<span></span></div>
+                        <input class="page-right" type="button" value="下一页">
+                  </div>
+                  <div class="link">
+                        <a href="javascript:void(0)">相关链接:</a>
+                        <a href="./brand.html"></a>
+                        <a href="javascript:void(0)"></a>
+                        <a href="./category2.html">返回上一页</a>
+                  </div>
+            </div>
+      </div>
+
+</body>
+
+</html>
+<script src="./js/jquery-1.12.2.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/template-web.js"></script>
+<!--商品列表模板  -->
+<script type="text/html" id="shopList">
+      {{each result}}
+      <div class="shop-list">
+            <div class="shop-left">
+                  {{#$value.productImg}}
+            </div>
+            <div class="shop-right">
+                  <p class="shopName">{{$value.productName}}</p>
+                  <p>{{$value.productPrice}}</p>
+                  <div class="comment">
+                        <p>{{$value.productQuote}}</p>
+                        <p>{{$value.productCom}}</p>
+                  </div>
+            </div>
+      </div>
+      {{/each}}
+</script>
+<!--商品详情图片模板  -->
+<script type="text/html" id="shopTop">
+      <div class="shop-pic">
+            <div class="pic1">{{#productImg}}</div>
+            <div class="pic2"><img src="./images/sc.jpg" alt=""></div>
+      </div>
+      <div class="shop-text">
+            <p class="text-top">{{productName}}</p>
+            <div class="text-bottom">
+                  <p></p>
+                  <p></p>
+            </div>
+            {{#bjShop}}
+      </div>
+</script>
+<!--网友评价模板  -->
+<script type="text/html" id="shopComment">
+      <div class="selectComment">
+            <p>优选网友评价</p>
+      </div>
+      {{each result}}
+      <div class="commentPeople">
+            <div class="comment-top">
+                  <p>{{$value.comName}}</p>
+                  <p>{{$value.comTime}}</p>
+            </div>
+            <div class="comment-middle">
+                  <p>★★★★★</p>
+                  <p>{{$value.comFrom}}</p>
+            </div>
+            <div class="goodCommet">{{$value.comContent}}</div>
+            <div class="callBack">回复</div>
+      </div>
+      {{/each}}
+</script>
+<script src="./js/shopList.js"></script>

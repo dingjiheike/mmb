@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优惠券</title>
+    <script>
+        document.querySelector('html').style.fontSize = window.screen.width / 10 + 'px';
+    </script>
+    <!-- 导入 css 文件-->
+    <link rel="stylesheet" href="../lib/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/coupon.css">
+    <link rel="stylesheet" href="../fonts/fonts_coupon/iconfont.css">
+    <!-- 导入 script 文件-->
+    <script src="../lib/Bootstrap/js/jquery-1.12.4.js"></script>
+    <script src="../lib/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="../lib/swiper/js/swiper.min.js"></script>
+    <script src="../fonts/fonts_coupon/iconfont.js"></script>
+    <script src="../js/template.js"></script>
+    <script src="../js/coupon.js"></script>
+</head>
+
+<body>
+                <!--顶部 导航-->
+    <div class="coupon_nav">
+        <a href="../index.html" class="iconfont" class="back">&#xe697;</a>
+            <h3>优惠券</h3>
+        <a href="javascript:void(0)" class="download">
+        </a>
+    </div>
+    <!-- 主体 内容 -->
+    <main>
+        <!--模板-->
+        <!--<a class="coupon_made">
+            <img src="../images/kfc_icon.jpg" alt="couponIcon">
+            <span>肯德基</span>
+        </a>-->
+    </main>
+    <!-- 底部 链接 -->
+    <footer class="coupon_links">
+        <a href="javascript:void(0)">首页</a> &nbsp;>&nbsp;
+        <a href="javascript:void(0)">优惠券</a>
+    </footer>
+</body>
+</html>
+<!-- 还有 标题 的 问题 没有 解决 部分  a 标签的跳转-->
+<script type="text/html" id="coupon_shops">
+    {{each result}}
+    <a href="couponproduct.1.html?_id={{$value.couponId}}&title={{$value.couponTitle}}" class="coupon_made">
+    <!--<a href="#" class="coupon_made">-->
+            <img src="{{$value.couponImg}}" alt="couponIcon">
+            <span>{{$value.couponTitle}}</span>
+            <b>{{$value._id}}</b>
+        </a>
+        {{/each}}
+</script>

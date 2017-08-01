@@ -1,0 +1,173 @@
+body {
+    background-color: #f1f1f1;
+    -webkit-tap-highlight-color:transparent;
+}
+.coudan_nav {
+    width: 100%;
+    height: 91px;
+    position: fixed;
+    top: 0;
+}
+/*凑单头部*/
+.coudan_header {
+    position: relative;
+    width: 100%;
+    height: 44px;
+    background-color: #FF841D;
+}
+.coudan_header > .font-icon-xiangzuojiantou,
+.coudan_header > .appxiazai {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 0;
+    color: #fff;
+    font-size: 16px;
+    line-height: 44px;
+}
+.coudan_header > .font-icon-xiangzuojiantou{
+    left: 8px;
+}
+.coudan_header > .appxiazai {
+    right: 0px;
+    background: url("../images/header_app.png");
+    padding: 6px;
+    background-origin: content-box;
+    background-clip: content-box;
+    background-size: 32px 32px;
+}
+
+.coudan_header > h1 {
+    margin: 0;
+    padding: 0 44px;
+    text-align: center;
+    line-height: 44px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: normal;
+}
+
+/*过滤部分*/
+.coudan_filter {
+    height: 38px;
+    width: 100%;
+    padding-right: 45px;
+    line-height: 38px;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+    border-bottom: 2px solid #eee;
+    position: relative;
+}
+.coudan_filter .shop,
+.coudan_filter .area,
+.coudan_filter .price {
+    float: left;
+    display: block;
+    font-size: 14px;
+    width: 33%;
+    height: 37px;
+    position: relative;
+}
+.coudan_filter .search {
+    position: absolute;
+    right: 0;
+    width: 45px;
+    height: 37px;
+    font-size: 20px;
+    line-height: 37px;
+    border-left: 2px solid #eee;
+}
+.coudan_filter > ul .caret {
+    position: absolute;
+    top: 45%;
+    width: 0;
+    height: 0;
+    border-top: 8px solid #cccccc;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    margin-left: 10px;
+}
+.coudan_filter .option {
+    position: absolute;
+    left: 0;
+    top: 38px;
+    width: 100%;
+    box-shadow: 0 2px 2px #ccc;
+    background-color: #fff;
+    z-index:999;
+}
+.coudan_filter .option>ul {
+    display: none;
+}
+.coudan_filter .option li {
+    padding: 0 20px;
+    text-align: left;
+    /*height: 37px;*/
+    /*line-height: 37px;*/
+    border-bottom: 2px solid #eee;
+}
+.coudan_filter .option li:last-of-type{
+    border: none;
+}
+.coudan_filter .option li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.coudan_filter .option li a span {
+    float: right;
+    line-height: 37px;
+    color: #FF841D;
+}
+
+/*产品列表*/
+.coudan_product {
+    width: 100%;
+    padding: 6px;
+    margin-top: 80px;
+}
+.coudan_product .section {
+    width: 100%;
+}
+.coudan_product .section li {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+.coudan_product .section li a {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    padding: 8px;
+    box-shadow: 0 3px 3px #ccc;
+}
+.coudan_product .section li a img {
+    display: block;
+    width: 80%;
+    margin: 0 auto 10px;
+}
+.coudan_product .section li a p {
+    font-size: 12px;
+    line-height: 30px;
+    margin: 0;
+}
+.coudan_product .section li a p.des {
+    height: 34px;
+    overflow: hidden;
+}
+.coudan_product .section li a .other span {
+    color: #FF841D;
+    font-size: 16px;
+}
+.coudan_product .section li a .other button {
+    outline-style: none;
+    border: 0;
+    float: right;
+    padding: 0 10px;
+    border-radius: 5px;
+    background-color: #FF841D;
+    line-height: 24px;
+    color: #fff;
+    text-align: center;
+

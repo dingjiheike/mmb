@@ -1,0 +1,51 @@
+.koubei {
+  border-top: 1px solid #CCCCCC;
+  border-radius: 5px; }
+  .koubei ul {
+    width: 100%; }
+    .koubei ul li {
+      border-bottom: 1px solid #ccc;
+      width: 100%; }
+      .koubei ul li .title {
+        padding: 0 20px;
+        background: #EDEDED;
+        height: 40px; }
+        .koubei ul li .title h3 {
+          float: left;
+          height: 100%;
+          line-height: 40px;
+          font-size: 18px; }
+        .koubei ul li .title span {
+          float: right;
+          height: 100%;
+          line-height: 40px;
+          color: #ccc }
+      .koubei ul li .neirong {
+        display: none; }
+        .koubei ul li .neirong .content {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          border-left: 1px solid #CCCCCC;
+          border-top: 1px solid #CCCCCC; }
+          .koubei ul li .neirong .content li {
+            height: 40px;
+            width: 33.3%;
+            border-right: 1px solid #CCCCCC;
+            border-bottom: 1px solid #CCCCCC; }
+            .koubei ul li .neirong .content li a {
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              line-height: 40px;
+              text-align: center;
+              color: black;
+              font-size: 14px; }
+
+.koubei ul li .hide {
+  display: block; }
+
+#foot {
+  margin-top: 10.6875rem; }
+
+/*# sourceMappingURL=koubei.css.map */

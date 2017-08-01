@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优惠券详情页</title>
+    <script>
+        document.querySelector('html').style.fontSize = window.screen.width / 10 + 'px';
+    </script>
+    <!-- 导入 css 文件-->
+    <link rel="stylesheet" href="../lib/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/couponLIst.1.css">
+    <link rel="stylesheet" href="../fonts/fonts_coupon/iconfont.css">
+    <link rel="stylesheet" href="../lib/swiper/css/swiper.css">
+    <!-- 导入 script 文件-->
+    <script src="../lib/Bootstrap/js/jquery-1.12.4.js"></script>
+    <script src="../lib/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="../lib/swiper/js/swiper.js"></script>
+    <script src="../fonts/fonts_coupon/iconfont.js"></script>
+    <script src="../lib/template/template-web.js"></script>
+    <script src="../js/couponList.1.js"></script>
+</head>
+<body>
+                <!--顶部 导航-->
+    <div class="coupon_nav">
+        <a href="./coupon.1.html" class="iconfont" class="back">&#xe697;</a>
+            <h3 class="couponTitle">优惠券</h3>
+        <a href="javascript:void(0)" class="download">
+        </a>
+    </div>
+    <!--中间 提示-->
+    <div class="coupon_mation">
+        —点餐前出售手机中的优惠券，即可享受优惠—
+    </div>
+    <!--列表-->
+        <ul class="couponInfo_list">
+        <!--<li>
+          <a href="javascript:void(0)">
+            <div class="left">
+                <img src="../images/kfc_food.jpg" alt="kfc_food">
+            </div>
+            <div class="right">
+                 <p>C15 分享两人餐 新奥尔良烤翅腿堡+香辣鸡腿堡+新奥尔良烤翅2块+大薯条+百事可乐(中)+雪顶咖啡201z7年7月凭肯德基优惠券</p>
+                 <p>￥&nbsp;8</p>
+                 <p>有效期至7月31日</p>
+            </div>
+         </a>
+          <i class="iconfont">&#xe6a7;</i>
+         </li>-->
+         </ul>   
+     <!-- 底部 链接 -->
+    <div class="coupon_links">
+        <a href="../index.html">首页</a> &nbsp;>&nbsp;
+        <a href="./coupon.1.html">优惠券</a>&nbsp;>&nbsp;
+        <a href="./couponproduct.1.html">肯德基优惠券</a>
+    </div>
+
+          <!--底部-->
+  <footer id="foot">
+    <div class="foot_top">
+      <a href="javascript:void(0)">登录</a>
+      <a href="javascript:void(0)">注册</a>
+      <a href="#" style="width: 40%; border: 0;">
+                <img src="../images/top.jpg" width="15" height="15">返回顶部</a>
+    </div>
+    <div class="footer">
+      <p>
+        <a href="javascript:void(0)" style="color: Red;">手机APP下载</a> <a href="index.html">
+                    慢慢买手机版</a> -- 掌上比价平台
+      </p>
+      <p>
+        m.manmanbuy.com
+        <img src="" width="0" height="0">
+      </p>
+    </div>
+  </footer>
+
+
+
+     <!-- 轮播图-->
+    <div class="productImgs">
+        <a class="left leftArrow iconfont  icon-back"></a>
+        <div class="mainPics">
+            <ul class="product_carousel clearfix">
+            <!--<li><img src="../images/kfc_food.jpg" alt=""></li>-->
+        </ul>
+        </div>
+        <a class="right rightArrow iconfont  icon-more"></a>
+    </div> 
+</body>
+</html>
+<!--<script type="text/html" id="couponTitle">
+{{each result}}
+     <a href="javascript:void(0)" class="iconfont" class="back">&#xe697;</a>
+            <h3>{{$value.couponProductTitle}}</h3>
+        <a href="javascript:void(0)" class="download">
+            <span class="iconfont">&#xe666;</span>
+            <span>App下载</span> 
+        </a>
+{{/each}}
+</script>-->
+<script type="text/html" id="couponProducts">
+{{each result}}
+     <li>
+          <a href="javascript:void(0)">
+            <!--左边的图片-->
+            <div class="left">
+                {{#$value.couponProductImg}}
+            </div>
+            <!--右边的详情-->
+            <div class="right">
+                 <p>{{$value.couponProductName}}</p>
+                 <p>{{$value.couponProductPrice}}</p>
+                 <p>{{$value.couponProductTime}}</p>
+            </div>
+         </a>
+          <i class="iconfont">&#xe6a7;</i>
+         </li>
+         {{/each}}
+</script>
+<script type="text/html" id="products_carousol_slide">
+    {{each result}}
+         <li>{{#$value.couponProductImg}}</li>
+    {{/each}}
+</script>

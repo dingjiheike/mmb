@@ -1,0 +1,31 @@
+// 默认分成20分
+@media screen and (width:320px){
+    html{
+        font-size: (320px/20);
+    }
+}
+@media screen and (width:375px){
+    html{
+        font-size: (375px/20);
+    }
+}
+@media screen and (width:414px){
+    html{
+        font-size: (414px/20);
+    }
+}
+@media screen and (width:380px){
+    html{
+        font-size: (380px/20);
+    }
+}
+@media screen and (width:360px){
+    html{
+        font-size: (360px/20);
+    }
+}
+@media screen and (width:375px){
+    html{
+        font-size: (320px/20);
+    }
+}
